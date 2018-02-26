@@ -68,8 +68,8 @@ public class LoadBalanceRestriction extends JobRestriction {
 
         if(loadBalanceRestriction)
         {
-            long memory = balance.getMemory();
-            long disk = balance.getDisk();
+            long memory = balance.getMemory() * balance.getMemoryUnit().getOrigin();
+            long disk = balance.getDisk() * balance.getDiskUnit().getOrigin();
 
             Runtime runtime = Runtime.getRuntime();
             if(runtime.freeMemory() < memory)
