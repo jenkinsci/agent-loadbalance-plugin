@@ -12,4 +12,14 @@ f.optionalBlock(name: AGENT_LOAD, title: _('agent.load'), checked: instance != n
     f.entry(field: 'disk', title: _('agent.load.disk')) {
         f.textbox()
     }
+
+    f.advanced() {
+        f.entry(field: 'memoryUnit', title: _('agent.load.unit')) {
+            f.select()
+        }
+
+        f.entry(field: 'diskUnit', title: _('agent.load.unit')) {
+            f.select()
+        }
+    }
 }

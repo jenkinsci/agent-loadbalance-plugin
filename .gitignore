@@ -22,10 +22,13 @@
 hs_err_pid*
 /target/
 
-# Ecipse stuff
+# Eclipse stuff
 .classpath
 .project
 .settings
+
+# Idea stuff
+.idea
 
 # Jenkins work dir
 work
