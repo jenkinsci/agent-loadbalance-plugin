@@ -1,6 +1,6 @@
 /**
  * Project Name:job-restrictions-plugin
- * File Name:LoadBalanceRestriction.java
+ * File Name:ResourceRestriction.java
  * Package Name:com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs
  * Date:Feb 9, 20186:33:08 PM
  * Authos:surenpi
@@ -23,12 +23,12 @@ import java.io.IOException;
 /**
  * @author surenpi
  */
-public class LoadBalanceRestriction extends JobRestriction {
+public class ResourceRestriction extends JobRestriction {
 
     private boolean loadBalanceRestriction;
 
     @DataBoundConstructor
-    public LoadBalanceRestriction(boolean loadBalanceRestriction)
+    public ResourceRestriction(boolean loadBalanceRestriction)
     {
         this.loadBalanceRestriction = loadBalanceRestriction;
     }
@@ -42,7 +42,8 @@ public class LoadBalanceRestriction extends JobRestriction {
 	 * @see com.synopsys.arc.jenkinsci.plugins.jobrestrictions.restrictions.JobRestriction#canTake(BuildableItem)
 	 */
 	@Override
-	public boolean canTake(BuildableItem item) {
+	public boolean canTake(BuildableItem item)
+    {
         if(item.task instanceof Project)
         {
             Project project = (Project) item.task;
@@ -105,7 +106,7 @@ public class LoadBalanceRestriction extends JobRestriction {
         @Override
         public String getDisplayName()
         {
-            return "LoadBalanceRestriction";
+            return "ResourceRestriction";
         }
     }
 
